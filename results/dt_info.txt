@@ -1,0 +1,138 @@
+BOOL: corral
+DT, Train accuracy: 100.0%
+DT, Test accuracy: 100.0%
+DT is read-once
+DT size: 27
+################################
+BOOL: mofn_3_7_10
+DT, Train accuracy: 99.0%
+DT, Test accuracy: 97.0%
+DT is read-once
+DT size: 93
+################################
+BOOL: mux6
+DT, Train accuracy: 100.0%
+DT, Test accuracy: 92.30000000000001%
+DT is read-once
+DT size: 47
+################################
+BOOL: parity5+5
+DT, Train accuracy: 95.1%
+DT, Test accuracy: 86.7%
+DT is read-once
+DT size: 489
+################################
+BOOL: spect
+DT, Train accuracy: 92.5%
+DT, Test accuracy: 77.8%
+DT is read-once
+DT size: 49
+################################
+BOOL: threeOf9
+DT, Train accuracy: 100.0%
+DT, Test accuracy: 100.0%
+DT is read-once
+DT size: 63
+################################
+BOOL: xd6
+DT, Train accuracy: 99.9%
+DT, Test accuracy: 99.5%
+DT is read-once
+DT size: 77
+################################
+CAT: adult
+DT, Train accuracy: 81.6%
+DT, Test accuracy: 80.60000000000001%
+DT is read-once
+DT size: 117
+################################
+CAT: chess
+DT, Train accuracy: 96.2%
+DT, Test accuracy: 96.2%
+DT is read-once
+DT size: 25
+################################
+CAT: compas
+DT, Train accuracy: 70.39999999999999%
+DT, Test accuracy: 68.4%
+DT is read-once
+DT size: 365
+################################
+CAT: german
+DT, Train accuracy: 85.6%
+DT, Test accuracy: 71.0%
+DT is read-once
+DT size: 139
+################################
+CAT: kr_vs_kp
+DT, Train accuracy: 95.5%
+DT, Test accuracy: 96.39999999999999%
+DT is read-once
+DT size: 27
+################################
+CAT: lending
+DT, Train accuracy: 82.8%
+DT, Test accuracy: 83.39999999999999%
+DT is read-once
+DT size: 153
+################################
+CAT: Mammographic-mass
+DT, Train accuracy: 81.6%
+DT, Test accuracy: 82.89999999999999%
+DT is read-once
+DT size: 87
+################################
+CAT: monk1
+DT, Train accuracy: 93.5%
+DT, Test accuracy: 85.7%
+DT is read-once
+DT size: 69
+################################
+CAT: monk2
+DT, Train accuracy: 99.3%
+DT, Test accuracy: 70.6%
+DT is read-once
+DT size: 125
+################################
+CAT: monk3
+DT, Train accuracy: 99.3%
+DT, Test accuracy: 97.3%
+DT is read-once
+DT size: 9
+################################
+CAT: postoperative-patient
+DT, Train accuracy: 92.9%
+DT, Test accuracy: 66.7%
+DT is read-once
+DT size: 55
+################################
+CAT: primary-tumor
+DT, Train accuracy: 92.5%
+DT, Test accuracy: 80.9%
+DT is read-once
+DT size: 71
+################################
+CAT: promoters
+DT, Train accuracy: 98.8%
+DT, Test accuracy: 81.8%
+DT is read-once
+DT size: 15
+################################
+CAT: recidivism
+DT, Train accuracy: 71.89999999999999%
+DT, Test accuracy: 63.800000000000004%
+DT is read-once
+DT size: 583
+################################
+CAT: tic_tac_toe
+DT, Train accuracy: 97.0%
+DT, Test accuracy: 92.7%
+DT is read-once
+DT size: 97
+################################
+CAT: vote
+DT, Train accuracy: 97.7%
+DT, Test accuracy: 95.39999999999999%
+DT is read-once
+DT size: 25
+################################
