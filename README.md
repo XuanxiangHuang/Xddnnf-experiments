@@ -18,6 +18,8 @@ PMLB and UCI Benchmark.
 #### dt_models:
 Trained DT models, 'bool' indicates all features are binary,
 'cat' indicates there are categorical features.
+(Each dataset was randomly split into training data (80%) and testing data (20%).
+The test instances reported in the paper are the first half of the testing data.)
 
 #### sdd_models:
 sdd files and vtree files, you can check SDD size here.
@@ -38,7 +40,7 @@ d-DNNF models.
 'ohe' denotes 'one-hot-encoding'.
 * train_dt.py: training DT models (with and without OHE).
 
-* compile_ddnnf_sdd.py: compiling RODTs into d-DNNFs/SDDs.
+* compile_ddnnf_sdd*.py: compiling RODTs into d-DNNFs/SDDs.
 
 * check_rodt.py: check if DT is read-once.
 
