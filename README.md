@@ -1,4 +1,5 @@
 # Xp d-DNNF/SDD
+This repository has code for replicating the experiments in
 AAAI'22 paper: Tractable Explanations for d-DNNF Classifiers.
 
 * Experiment results.
@@ -54,34 +55,5 @@ d-DNNF models.
 
 * ddnnf.py and ddnnf_ohe.py: d-DNNFs/SDDs manager.
 
-## Compilation Time (in seconds):
-#### Compiling RODTs to d-DNNFs/SDDs.
-| Dataset               | d-DNNF | SDD |
-|-----------------------|--------|-----|
-| corral                | 0.0    | 0.0 |
-| mofn_3_7_10           | 0.5    | 0.1 |
-| mux6                  | 0.1    | 0.0 |
-| parity5+5             | 2.0    | 0.3 |
-| spect                 | 0.2    | 0.1 |
-| threeOf9              | 0.2    | 0.1 |
-| adult                 | 11.2   | 2.7 |
-| chess                 | 0.8    | 0.4 |
-| compas                | 10.2   | 1.2 |
-| german                | 5.3    | 3.5 |
-| kr_vs_kp              | 0.9    | 0.4 |
-| lending               | 7.9    | 1.3 |
-| Mammographic-mass     | 0.5    | 0.1 |
-| monk1                 | 0.3    | 0.1 |
-| monk2                 | 0.2    | 0.1 |
-| monk3                 | 0.1    | 0.1 |
-| postoperative-patient | 0.1    | 0.1 |
-| primary-tumor         | 0.2    | 0.1 |
-| promoters             | 0.2    | 0.2 |
-| recidivism            | 22.6   | 5.9 |
-| tic_tac_toe           | 0.8    | 0.2 |
-| vote                  | 0.1    | 0.1 |
-
-
-
-
-
+## Compilation Time
+[Compiling RODTs to d-DNNFs/SDDs](results/compilation_time.csv).
