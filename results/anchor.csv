@@ -1,4 +1,4 @@
-Dataset,#tested instances,Total time,Max time,min time,Avg. time
+Dataset,#tested instances,Total time (sec),Max time (sec),min time (sec),Avg. time (sec)
 adult,1411,38,5099.889,15.351,0.513,3.614
 chess,320,7,601.117,21.170,0.492,1.878
 compas,617,28,1673.703,14.654,0.567,2.713
