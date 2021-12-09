@@ -8,7 +8,7 @@
 import resource
 from pysat.formula import IDPool
 from pysat.solvers import Solver
-from ddnnf import dDNNF
+from ..ddnnf import dDNNF
 ################################################################################
 
 

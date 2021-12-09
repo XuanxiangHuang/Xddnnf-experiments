@@ -10,7 +10,7 @@ import pickle
 from graphviz import Source
 from pysdd.sdd import SddManager, Vtree
 from sklearn.metrics import accuracy_score
-from decision_tree import DecisionTree
+from .decision_tree import DecisionTree
 import numpy as np
 ################################################################################
 

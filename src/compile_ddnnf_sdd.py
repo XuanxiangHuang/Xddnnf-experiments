@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 #
 #   Compiling d-DNNF/SDD Classifiers
+#   Author: Xuanxiang Huang
 #
 ################################################################################
 # DT
@@ -103,13 +104,13 @@ if __name__ == '__main__':
         for item in name_list:
             data_name = item.strip()
             # dataset and dt
-            data = f"datasets/{data_name}.csv"
-            dt_save = f"dt_models/bool/{data_name}.pkl"
+            data = f"../datasets/{data_name}.csv"
+            dt_save = f"../models/dts/binary/{data_name}.pkl"
             # save d-DNNF files
-            save_ddnnf = f"ddnnf_models/"
+            save_ddnnf = f"../models/ddnnfs/"
             # sdd and vtree
-            sdd_save = f"sdd_models/{data_name}.txt"
-            vtree_save = f"sdd_models/{data_name}_vtree.txt"
+            sdd_save = f"../models/sdds/{data_name}.txt"
+            vtree_save = f"../models/sdds/{data_name}_vtree.txt"
             print(f"############ {data_name} ############")
             if args[2] == '-sdd':
                 compile_sdd_time_start = resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime + \
@@ -118,7 +119,7 @@ if __name__ == '__main__':
                 compile_sdd_time_end = resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime + \
                                        resource.getrusage(resource.RUSAGE_SELF).ru_utime - compile_sdd_time_start
                 print(f"compile {data_name} to SDD in {compile_sdd_time_end:.1f} secs")
-                # with open(f'results/compile_time_sdd.txt', 'a') as f:
+                # with open(f'../results/compile_time_sdd.txt', 'a') as f:
                 #     f.write(f"{data_name} & {compile_sdd_time_end:.1f}\n")
             elif args[2] == '-ddnnf':
                 compile_ddnnf_time_start = resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime + \
@@ -127,5 +128,5 @@ if __name__ == '__main__':
                 compile_ddnnf_time_end = resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime + \
                                          resource.getrusage(resource.RUSAGE_SELF).ru_utime - compile_ddnnf_time_start
                 print(f"compile {data_name} to d-DNNF in {compile_ddnnf_time_end:.1f} secs")
-                # with open(f'results/compile_time_ddnnf.txt', 'a') as f:
+                # with open(f'../results/compile_time_ddnnf.txt', 'a') as f:
                 #     f.write(f"{data_name} & {compile_ddnnf_time_end:.1f}\n")

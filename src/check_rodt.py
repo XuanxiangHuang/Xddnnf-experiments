@@ -32,7 +32,7 @@ def check_rodt_ohe(dt_file):
 # -dataset xxx -cat
 if __name__ == '__main__':
     args = sys.argv[1:]
-    if (len(args) == 2 or len(args) == 3) and args[0] == '-dataset':
+    if (len(args) == 2 or len(args) == 3) and args[0] == '-bench':
         bench_name = args[1]
 
         with open(f"{bench_name}", 'r') as fp:
@@ -42,10 +42,10 @@ if __name__ == '__main__':
             data_name = item.strip()
             # dataset and dt model
             if len(args) == 3 and args[2] == '-cat':
-                dt_save_ohe = f"dt_models/cat/{data_name}.pkl"
-                print(f"############ CAT: {data_name} ############")
+                dt_save_ohe = f"../models/dts/categorical/{data_name}.pkl"
+                print(f"############ Categorical: {data_name} ############")
                 check_rodt_ohe(dt_save_ohe)
             else:
-                dt_save = f"dt_models/bool/{data_name}.pkl"
-                print(f"############ BOOL: {data_name} ############")
+                dt_save = f"../models/dts/binary/{data_name}.pkl"
+                print(f"############ Binary: {data_name} ############")
                 check_rodt(dt_save)

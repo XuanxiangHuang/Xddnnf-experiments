@@ -57,12 +57,12 @@ def train_dt_ohe(dataset, max_depth, train_threshold, test_threshold, save_name)
 ##########################################################################################
 if __name__ == '__main__':
     name = "corral"
-    data = f"datasets/{name}.csv"
-    dt_save = f"{name}.pkl"
+    data = f"../datasets/{name}.csv"
+    dt_save = f"../models/dts/binary/{name}.pkl"
 
     name_ohe = "vote"
-    data_ohe = f"datasets/{name_ohe}.csv"
-    dt_save_ohe = f"{name_ohe}.pkl"
+    data_ohe = f"../datasets/{name_ohe}.csv"
+    dt_save_ohe = f"../models/dts/categorical/{name_ohe}.pkl"
 
     train_t = 0.75
     test_t = 0.7

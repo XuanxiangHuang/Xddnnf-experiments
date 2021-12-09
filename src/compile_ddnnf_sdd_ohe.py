@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 #
 #   Compiling d-DNNF/SDD Classifiers (one-hot encoding)
+#   Author: Xuanxiang Huang
 #
 ################################################################################
 # DT
@@ -114,13 +115,13 @@ if __name__ == '__main__':
             # dataset and dt
             data_name = item.strip()
             # dataset and dt
-            data_ohe = f"datasets/{data_name}.csv"
-            dt_save_ohe = f"dt_models/cat/{data_name}.pkl"
+            data_ohe = f"../datasets/{data_name}.csv"
+            dt_save_ohe = f"../models/dts/categorical/{data_name}.pkl"
             # save d-DNNF files
-            save_ddnnf = f"ddnnf_models/"
+            save_ddnnf = f"../models/ddnnfs/"
             # sdd and vtree
-            sdd_save_ohe = f"sdd_models/{data_name}.txt"
-            vtree_save_ohe = f"sdd_models/{data_name}_vtree.txt"
+            sdd_save_ohe = f"../models/sdds/{data_name}.txt"
+            vtree_save_ohe = f"../models/sdds/{data_name}_vtree.txt"
             print(f"############ {data_name} ############")
             if args[2] == '-sdd':
                 compile_sdd_time_start = resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime + \
