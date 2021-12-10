@@ -11,49 +11,28 @@ To run scripts, you need:
 - [PySAT](https://github.com/pysathq/pysat): for enumerating AXps/CXps.
 - [PySDD](https://github.com/wannesm/PySDD): for compiling SDD and find one AXp/CXp of SDD.
 - [Orange3](https://github.com/biolab/orange3): for learning DT.
+- [Anchor](https://github.com/marcotcr/anchor): for comparison.
 
 ## Folders:
 #### datasets:
 PMLB and UCI Benchmark.
 
-#### dt_models:
-Trained DT models, 'bool' indicates all features are binary,
-'cat' indicates there are categorical features.
-(Each dataset was randomly split into training data (80%) and testing data (20%).
-The test instances reported in the paper are the first half of the testing data.)
-
-#### sdd_models:
-sdd files and vtree files, you can check SDD size here.
-
-#### ddnnf_models:
-d-DNNF models.
+#### models:
+decision trees, d-DNNFs, sdds.
 
 #### results:
-* aaai22_*: all results presented in the paper.
-   (datasets are randomly split into 80% for training and 20% for testing,
-   explained instances are the first half of the testing data).
-* compile_*: compilation time.
-* dt_info: accuracy and size of DT.
-* ddnnf_* and sdd_*: explaining all instances of BOOL datasets and training instances of CAT datasets.
+* [Explaining d-DNNF](results/d-dnnf.csv) and [Explaining SDD](results/sdd.csv):
+* [Compilation time](results/compilation_time.csv).
 
 
 ## Files:
 'ohe' denotes 'one-hot-encoding'.
-* train_dt.py: training DT models (with and without OHE).
-
-* compile_ddnnf_sdd*.py: compiling RODTs into d-DNNFs/SDDs.
-
-* check_rodt.py: check if DT is read-once.
-
 * xp*.py: explainer of d-DNNFs/SDDs.
-
-* explain_*.py: running experiments.
 
 * decision_tree*.py: RODT models (with and without OHE).
 
-* dnnfAnchor*.py: explaining ddnnf with Anchor.
-
 * ddnnf.py and ddnnf_ohe.py: d-DNNFs/SDDs manager.
 
-## Compilation Time
-[Compiling RODTs to d-DNNFs/SDDs](results/compilation_time.csv).
+* train.py: training DT/d-DNNF/SDD models (with and without OHE).
+
+* reproduce_experiment.py: explaining d-DNNFs/SDDs via proposed method and via Anchor.
