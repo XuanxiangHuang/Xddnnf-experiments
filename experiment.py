@@ -780,7 +780,7 @@ def anchor_call_ohe(model, inst, dt, threshold=0.95, verbose=0):
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    if len(args) == 4 and args[0] == '-bench':
+    if 3 <= len(args) <= 4 and args[0] == '-bench':
         bench_name = args[1]
 
         with open(f"{bench_name}", 'r') as fp:
@@ -792,28 +792,51 @@ if __name__ == '__main__':
             print(f"############ {data_name} ############")
             data = f"datasets/{data_name}.csv"
             if args[2] == '-sdd':
-                if args[3] == '-ohe':
-                    dt_file = f"models/dts/categorical/{data_name}.pkl"
-                    save_dir = f"tmp/"
-                    explain_sdd_ohe(data, dt_file, save_dir)
-                else:
+                if len(args) == 3:
                     dt_file = f"models/dts/binary/{data_name}.pkl"
                     sdd_save = f"models/sdds/{data_name}.txt"
                     vtree_save = f"models/sdds/{data_name}_vtree.txt"
                     save_dir = f"tmp/"
                     explain_sdd(sdd_save, vtree_save, data, dt_file, save_dir)
-            elif args[2] == '-ddnnf':
-                if args[3] == '-ohe':
+                elif args[3] == '-ohe':
                     dt_file = f"models/dts/categorical/{data_name}.pkl"
                     save_dir = f"tmp/"
-                    explain_ddnnf_ohe(data, dt_file, save_dir)
-                else:
+                    explain_sdd_ohe(data, dt_file, save_dir)
+            elif args[2] == '-ddnnf':
+                if len(args) == 3:
                     dt_file = f"models/dts/binary/{data_name}.pkl"
                     save_dir = f"tmp/"
                     ddnnf_model = f"models/ddnnfs/{data_name}.pkl"
                     explain_ddnnf(data, ddnnf_model, dt_file, save_dir)
+                elif args[3] == '-ohe':
+                    dt_file = f"models/dts/categorical/{data_name}.pkl"
+                    save_dir = f"tmp/"
+                    explain_ddnnf_ohe(data, dt_file, save_dir)
             elif args[2] == '-anchor':
-                if args[3] == '-ohe':
+                if len(args) == 3:
+                    dt_file = f"models/dts/binary/{data_name}.pkl"
+                    dt = DT.DecisionTree.from_file(dt_file)
+                    dt_train, dt_test = dt.train()
+                    ddnnf = dDNNF()
+                    ddnnf.compile(dt)
+                    exps = []
+                    atimes = []
+                    d_len = int(len(dt.X_test)/2)
+                    for i in range(d_len):
+                        print(f"instance {i} of {d_len}:")
+                        sample = dt.X_test[i]
+                        exp, time = anchor_call(ddnnf, sample, list(dt.classes), dt.features, dt.X_train, verbose=2)
+                        exps.append(exp)
+                        atimes.append(time)
+
+                    assert len(exps) == d_len
+                    results = f"{data_name} & {d_len} & {ceil((sum(exps) / d_len) / len(dt.features) * 100):.0f} & "
+                    results += "{0:.3f} & {1:.3f} & {2:.3f} & {3:.3f}\n".format(sum(atimes), max(atimes), min(atimes),
+                                                                                sum(atimes) / len(atimes))
+                    # with open('results/aaai22_anchor.txt', 'a') as f:
+                    #     f.write(results)
+                    print(results)
+                elif args[3] == '-ohe':
                     dt_file = f"models/dts/categorical/{data_name}.pkl"
                     dt = DT_OHE.DecisionTree.from_file(dt_file)
                     dt_train, dt_test = dt.train()
@@ -829,29 +852,6 @@ if __name__ == '__main__':
                         print(f"instance {i} of {d_len}:")
                         sample = dt.test_datatable.X[i]
                         exp, time = anchor_call_ohe(ddnnf, sample, dt, verbose=2)
-                        exps.append(exp)
-                        atimes.append(time)
-
-                    assert len(exps) == d_len
-                    results = f"{data_name} & {d_len} & {ceil((sum(exps) / d_len) / len(dt.features) * 100):.0f} & "
-                    results += "{0:.3f} & {1:.3f} & {2:.3f} & {3:.3f}\n".format(sum(atimes), max(atimes), min(atimes),
-                                                                                sum(atimes) / len(atimes))
-                    # with open('results/aaai22_anchor.txt', 'a') as f:
-                    #     f.write(results)
-                    print(results)
-                else:
-                    dt_file = f"models/dts/binary/{data_name}.pkl"
-                    dt = DT.DecisionTree.from_file(dt_file)
-                    dt_train, dt_test = dt.train()
-                    ddnnf = dDNNF()
-                    ddnnf.compile(dt)
-                    exps = []
-                    atimes = []
-                    d_len = int(len(dt.X_test)/2)
-                    for i in range(d_len):
-                        print(f"instance {i} of {d_len}:")
-                        sample = dt.X_test[i]
-                        exp, time = anchor_call(ddnnf, sample, list(dt.classes), dt.features, dt.X_train, verbose=2)
                         exps.append(exp)
                         atimes.append(time)
 
