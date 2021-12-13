@@ -738,13 +738,15 @@ def anchor_call(model, inst, class_names, feature_names, train_data,
     # length seems incorrect
     return len(expl_set), timer
 
-def binarize(dt, samples, preds):
-    inst_datatable = Table.from_numpy(dt.datatable.domain, samples, preds)
-    inst_datatable_bin = dt.continuizer(inst_datatable)
-    return inst_datatable_bin.X
-
 
 def anchor_call_ohe(model, inst, dt, threshold=0.95, verbose=0):
+    #############################################
+    def binarize(dt, samples, preds):
+        inst_datatable = Table.from_numpy(dt.datatable.domain, samples, preds)
+        inst_datatable_bin = dt.continuizer(inst_datatable)
+        return inst_datatable_bin.X
+    #############################################
+
     classifier_fn = lambda x: pd.Series(model.predict_all(list(binarize(dt,x,dt.classifier(x)))))
 
     timer = resource.getrusage(resource.RUSAGE_CHILDREN).ru_utime + \
