@@ -24,7 +24,7 @@ PMLB and UCI Benchmark.
 decision trees, d-DNNFs, sdds.
 
 #### results:
-* [Explaining d-DNNF](results/d-dnnf.csv) and [Explaining SDD](results/sdd.csv):
+* [Explaining d-DNNF](results/d-dnnf.csv) and [Explaining SDD](results/sdd.csv).
 * [Compilation time](results/compilation_time.csv).
 
 
