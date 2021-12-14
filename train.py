@@ -42,7 +42,7 @@ class Options(object):
             Parser.
         """
         try:
-            opts, args = getopt.getopt(command[1:], 'c:d:D:f:l:s:t:',
+            opts, args = getopt.getopt(command[1:], 'c:d:D:f:hl:or:s:t:',
                                        ['classifier=',
                                         'depth=',
                                         'dataset=',
@@ -50,9 +50,9 @@ class Options(object):
                                         'help',
                                         'learn=',
                                         'ohe',
+                                        'reproduce=',
                                         'save=',
                                         'test-split=',
-                                        'reproduce='
                                         ])
         except getopt.GetoptError as err:
             sys.stderr.write(str(err).capitalize())
@@ -92,14 +92,14 @@ class Options(object):
                 self.input_dt = str(arg)
             elif opt in ('-D', '--dataset'):
                 self.dataset = arg
-            elif opt in '--ohe':
+            elif opt in ('-o', '--ohe'):
                 self.ohe = True
             elif opt in ('-s', '--save'):
                 self.save = str(arg)
-            elif opt in '--help':
+            elif opt in ('-h', '--help'):
                 self.usage()
                 sys.exit(0)
-            elif opt in '--reproduce':
+            elif opt in ('-r', '--reproduce'):
                 self.reproduce = str(arg)
             else:
                 assert False, 'unhandled option: {0} {1}'.format(opt, arg)
@@ -113,8 +113,8 @@ class Options(object):
         print('Usage: ' + os.path.basename(self.command[0]) + ' [options]')
         print('example #1: ./train -d 6 -l 0.8:0.8 -c dt -D datasets/corral.csv -s tmp/dt_corral')
         print('             train sdd classifier (train accuracy >= 0.85, test accuracy >= 0.8')
-        print('example #2: ./train -c sdd -D datasets/adult.csv -f models/dts/categorical/adult.pkl --ohe -s tmp/adult')
-        print('example #3 (Reproducibility): ./train --reproduce data_cat_list.txt -c sdd --ohe')
+        print('example #2: ./train -c sdd -D datasets/adult.csv -f models/dts/categorical/adult.pkl -o -s tmp/adult')
+        print('example #3 (Reproducibility): ./train -r data_cat_list.txt -c sdd --ohe')
         print('Options:')
         print(' -d,  --depth=<int>       Maximal depth of a tree (default 8);')
         print(' -l,  --learn=<float>:<float> Learn dt with threshold. (default: train >= 0.5, test >= 0.5);')
