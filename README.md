@@ -2,6 +2,9 @@
 This repository has code for replicating the experiments in
 AAAI'22 paper: Tractable Explanations for d-DNNF Classifiers.
 
+Use the [code](https://github.com/XuanxiangHuang/Xddnnf) here
+if you want to try this explainer.
+
 * Experiment results.
 * Datasets: [Penn ML Benchmarks](https://epistasislab.github.io/pmlb/) and [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets.php).
 * Decision tree (DT) models.
