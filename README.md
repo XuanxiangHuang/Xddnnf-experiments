@@ -16,12 +16,6 @@ To run scripts, you need:
 - [Orange3](https://github.com/biolab/orange3): for learning DT.
 - [Anchor](https://github.com/marcotcr/anchor): for comparison.
 
-## Usage
-
-```
-python3 xdl.py -h
-```
-
 ## Example
 
 To train a decision tree:
