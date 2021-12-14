@@ -1,4 +1,4 @@
-# Xp d-DNNF/SDD
+# Xddnnf-experiments
 This repository has code for replicating the experiments in
 AAAI'22 paper: Tractable Explanations for d-DNNF Classifiers.
 
