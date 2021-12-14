@@ -23,7 +23,7 @@ To train a decision tree:
 python3 train.py -d 6 -l 0.8:0.8 -c dt -D datasets/corral.csv -s tmp/dt_corral
 ```
 
-To train a sdd from a decision tree:
+To compile an sdd from a decision tree:
 ```
 python3 train.py -c sdd -D datasets/adult.csv -f models/dts/categorical/adult.pkl -o -s tmp/adult
 ```
