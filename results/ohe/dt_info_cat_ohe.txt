@@ -1,0 +1,65 @@
+############ BOOL: chess ############
+DT, Train accuracy: 99.0%
+DT, Test accuracy: 99.1%
+DT is read-once
+DT size: 41
+############ BOOL: compas ############
+DT, Train accuracy: 70.19999999999999%
+DT, Test accuracy: 67.2%
+DT is read-once
+DT size: 393
+############ BOOL: kr_vs_kp ############
+DT, Train accuracy: 99.4%
+DT, Test accuracy: 98.8%
+DT is read-once
+DT size: 41
+############ BOOL: lending ############
+DT, Train accuracy: 84.2%
+DT, Test accuracy: 81.69999999999999%
+DT is read-once
+DT size: 341
+############ BOOL: Mammographic-mass ############
+DT, Train accuracy: 82.19999999999999%
+DT, Test accuracy: 79.80000000000001%
+DT is read-once
+DT size: 119
+############ BOOL: monk1 ############
+DT, Train accuracy: 100.0%
+DT, Test accuracy: 98.2%
+DT is read-once
+DT size: 81
+############ BOOL: monk2 ############
+DT, Train accuracy: 98.5%
+DT, Test accuracy: 64.7%
+DT is read-once
+DT size: 117
+############ BOOL: monk3 ############
+DT, Train accuracy: 98.9%
+DT, Test accuracy: 99.1%
+DT is read-once
+DT size: 9
+############ BOOL: postoperative-patient ############
+DT, Train accuracy: 94.3%
+DT, Test accuracy: 66.7%
+DT is read-once
+DT size: 57
+############ BOOL: primary-tumor ############
+DT, Train accuracy: 94.39999999999999%
+DT, Test accuracy: 64.7%
+DT is read-once
+DT size: 81
+############ BOOL: promoters ############
+DT, Train accuracy: 100.0%
+DT, Test accuracy: 81.8%
+DT is read-once
+DT size: 17
+############ BOOL: tic_tac_toe ############
+DT, Train accuracy: 99.5%
+DT, Test accuracy: 94.8%
+DT is read-once
+DT size: 113
+############ BOOL: vote ############
+DT, Train accuracy: 98.3%
+DT, Test accuracy: 94.3%
+DT is read-once
+DT size: 19
