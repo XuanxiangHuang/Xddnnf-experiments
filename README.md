@@ -32,3 +32,15 @@ To reproduce experiments:
 ```
 python3 experiment.py -bench data_cat_list.txt -sdd -ohe
 ```
+
+## Citation
+
+If you make use of this code in your own work, please cite our paper:
+```
+@article{huang2022tractable,
+  title={Tractable explanations for d-DNNF classifiers},
+  author={Huang, Xuanxiang and Izza, Yacine and Ignatiev, Alexey and Cooper, MC and Asher, Nicholas and Marques-Silva, Joao},
+  journal={AAAI, February},
+  year={2022}
+}
+```
